@@ -93,17 +93,13 @@ function returnArgumentsArray() {
 
    console.log(newSum()) выведет 6
  */
-function bindFunction(fn) {
-    return fn.call(...arguments);
+function bindFunction(fn, ...arr) {
+    return () => fn.apply(null, arr);
 }
 
 // вариант 2
 function bindFunctionTwo(fn) {
-    let arr = [...arguments];
-
-    arr.splice(0, 1);
-
-    return fn.apply(null, arr);
+    return () => fn.call(...arguments);
 }
 
 // Вариант 3
@@ -114,7 +110,7 @@ function bindFunctionThree(fn) {
         arr.push(arguments[i])
     }
 
-    return fn.apply(null, arr)
+    return () => fn.apply(null, arr)
 }
 
 export {
