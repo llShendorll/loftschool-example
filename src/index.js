@@ -118,17 +118,17 @@ function calculator(number = 0) {
     }
 
     return {
-        sum: function(...arg) {
+        sum: (...arg) => {
             return arg.reduce((sum, current) => {
                 return sum + current
             }, number)
         },
-        dif: function(...arg) {
+        dif: (...arg) => {
             return number - arg.reduce((sum, current) => {
                 return sum + current
             })
         },
-        div: function(...arg) {
+        div: (...arg) => {
             for (let i = 0; i < arg.length; i++) {
                 if (arg[i] === 0) {
                     throw new Error('division by 0');
@@ -138,7 +138,7 @@ function calculator(number = 0) {
 
             return number;
         },
-        mul: function(...args) {
+        mul: (...args) => {
             return args.reduce((multip, current) => {
                 return multip * current
             }, number)
