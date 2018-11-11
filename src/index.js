@@ -101,7 +101,9 @@ function findError(where) {
  */
 function deleteTextNodes(where) {
     for (let textNode of where.childNodes) {
-        where.removeChild(textNode);
+        if (textNode.nodeType === Node.TEXT_NODE) {
+            where.removeChild(textNode);
+        }
     }
 }
 
