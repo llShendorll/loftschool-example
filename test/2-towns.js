@@ -1,5 +1,5 @@
 import assert from 'assert';
-let template = require('../../../Desktop/src/towns-content.hbs');
+let template = require('../src/towns-content.hbs');
 
 describe('ДЗ 6.2 - Фильтр городов', () => {
     let homeworkContainer = document.createElement('div');
@@ -12,7 +12,7 @@ describe('ДЗ 6.2 - Фильтр городов', () => {
     homeworkContainer.id = 'homework-container';
     homeworkContainer.innerHTML = template();
     document.body.appendChild(homeworkContainer);
-    filterPage = require('../../../Desktop/src/towns');
+    filterPage = require('../src/towns');
 
     describe('Функциональное тестирование', () => {
         describe('isMatching', () => {
