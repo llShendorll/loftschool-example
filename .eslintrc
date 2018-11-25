@@ -13,6 +13,7 @@
     "eslint:recommended"
   ],
   "rules": {
+    "no-console": "off",
     "no-cond-assign": "off",
     "space-before-blocks": "error",
     "spaced-comment": "error",
@@ -37,7 +38,8 @@
     ],
     "max-len": [
       "error",
-      120
+      120,
+      { "ignoreComments": true }
     ],
     "newline-after-var": "error",
     "newline-before-return": "error",
